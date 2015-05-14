@@ -40,7 +40,7 @@ func CPUPercent(interval time.Duration, percpu bool) ([]float64, error) {
 		} else {
 			lastPerCPUTimes = cpuTimes
 		}
-		time.Sleep(interval)
+		time.Sleep(interval* time.Second)
 		cpuTimes, err = CPUTimes(percpu)
 		if err != nil {
 			return nil, err
